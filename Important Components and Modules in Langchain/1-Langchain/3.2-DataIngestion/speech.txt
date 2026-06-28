@@ -1,0 +1,864 @@
+Hello guys.
+
+So we are going to continue the discussion with respect to Lang Chain.
+
+Uh, in our previous video, uh, I had actually shown you the example like what we will be specifically
+
+doing step by step, you know, from data ingestion to data transformation, then converting the text
+
+into vectors, finally storing it in a vector store db, and then probably creating a retrieval chain
+
+along with prompt template, we send that entire data to the LM model.
+
+And finally we get the response.
+
+Now over here what we will be doing is that we will be exploring each and every step and how we can
+
+actually implement with the help of Lang Chain.
+
+The first step that we are going to discuss about is data ingestion.
+
+Right?
+
+And when I say data ingestion, it's more about loading a data set from a specific source.
+
+Right.
+
+We also say it as uh, you know, document loaders in Lang chain.
+
+So uh, we'll be discussing about this.
+
+We will be doing some practical implementation.
+
+I'll be taking different types of files, and I'll show you that how we can read that particular data
+
+from that and convert into a document.
+
+Okay.
+
+So all those things will be probably discussed.
+
+So first step we'll go with this.
+
+Then we will uh as we go ahead we'll be seeing other modules also.
+
+So let me quickly, uh show you over here, I have actually created a data ingestion dot ipynb file,
+
+and I have selected my virtual environment.
+
+Um, one very important thing that you should remember.
+
+Whenever I really need to work with this ipynb file, I need to have a ipykernel.
+
+Okay, so that is the reason I have already done the installation in the requirements.txt.
+
+So this is perfect till here.
+
+Now let me do one thing.
+
+Let me also go ahead and show you the documentation.
+
+Okay.
+
+Now it's really important that you understand.
+
+Or you have the habit of reading the language in documentation.
+
+Because this documentation is just like you have each and every thing available over here.
+
+And, uh, the only problem I see while following the documentation is that it is completely scattered.
+
+So that is the reason when I am actually creating this course, I will create in such a way that it
+
+will be having the videos in a ordered way, so that you understand step by step how things are basically
+
+getting implemented in generative AI application, specifically for the generative AI application.
+
+So here, uh, as I said, we are going to discuss about data ingestion.
+
+In that data ingestion we are going to discuss about document loaders.
+
+Now what exactly is document loader.
+
+It's just like what are the different ways to load different, different data sources.
+
+And here if I just see on the left hand side there are multiple different ways you can load a table.
+
+You can load amplify dataset, you can load or save.
+
+You can probably go ahead and see about uh, uh, let's say a browser base is there, Cassandra is there.
+
+You'll be able to load from this particular data set.
+
+You want to load it from CSV.
+
+You have this particular option if you want to go ahead and load it from web based.
+
+So so many different different options are there.
+
+If you want hugging face data set, you can go ahead and load it.
+
+If you want to load images you can go ahead and load it, you know.
+
+So that is why I said that Langston is an amazing framework.
+
+And, uh, it's like whatever document loaders you really want to load the data from, you can just
+
+go ahead and refer this.
+
+Okay.
+
+In this video I will be showing you some of the good examples, most common examples that we use with
+
+respect to data ingestion using document loaders.
+
+Uh, anyhow, tomorrow, if you have any other requirements you can definitely see this particular documentation.
+
+So here I have already given the link for the documentation.
+
+You can start the coding from here okay.
+
+Now let's go ahead and uh let's start this and I'll be showing you multiple ways of doing the data injection
+
+technique itself.
+
+Basically, we'll be seeing multiple ways how you can load the data set.
+
+Okay.
+
+So the first uh, technique that I'm actually going to use is something called as text loader.
+
+Okay.
+
+Now text loader actually helps you to load any types of txt files.
+
+So I have created this folder called as data ingestion.
+
+And inside this I have created this particular speech dot txt folder file.
+
+Okay.
+
+And in this I have just put some information of a speech over here from Wikipedia, and I've just copied
+
+and pasted it okay.
+
+Now what I'm actually going to do inside this.
+
+And again I also have a PDF file.
+
+I also have an XML file.
+
+We'll also try to read that as we go ahead.
+
+So this speech this text dot loader, what it does is that it actually helps you to load any speech
+
+dot txt file like any.
+
+TXT file in short.
+
+Right.
+
+So here I've created this speech dot txt file.
+
+So it will actually allow you to load this.
+
+Now how do you do that.
+
+So for that what I will do I will go ahead and write from long chain underscore community okay.
+
+Now this long chain underscore community we need to make sure that we go ahead and install in the requirement
+
+dot txt okay.
+
+So I will quickly go ahead and press shift tab.
+
+And let me just quickly upload uh or run this uh requirement dot txt file.
+
+Okay.
+
+So I have to be in my virtual environment.
+
+Please remember that.
+
+And then I will go ahead and write pip install minus r requirements.txt.
+
+So once I do this I've already done the installation.
+
+So it shows me requirement already satisfied okay.
+
+So here in our school community we are specifically going to use.
+
+Now I will go ahead and import from luncheon underscore community.
+
+We have something called as document loaders.
+
+Okay.
+
+Now inside this you have something called as text loader.
+
+Now in the web page in the website we saw different different types of loaders.
+
+Right.
+
+Document loaders.
+
+Everything is available inside this long chain underscore community dot document loaders okay.
+
+Please remember that now after I import this text loader.
+
+Right.
+
+What I really need to do I need to initialize the text loader.
+
+And here I will give my file path.
+
+File path is nothing but inside this.
+
+Since I'm working inside this folder I have something called as speech dot txt.
+
+So here what we can basically do is that we can go ahead and write speech dot txt okay speech dot txt.
+
+Now here what I'm going to do I'll go and initialize this as a variable called as loader okay.
+
+Now when we are reading it okay let's let's go ahead and execute this.
+
+And if I go ahead and execute it shows that hey loader is nothing, but it is a document loader of a
+
+text at this specific memory location.
+
+This is fine okay.
+
+Now when we are loading this right, entire the content inside the speech dot text will be converted
+
+into a documents only when we go ahead and write loader dot load function.
+
+So loader load function will basically help you to create this text documents.
+
+Okay we'll see to it okay.
+
+And then finally I will go ahead and print the text documents.
+
+So here you can see this actually is my document.
+
+And it has this page content variable.
+
+And all the text inside that txt file is inside this page underscore content okay.
+
+And here you can see that metadata source is nothing but speech dot txt.
+
+So in short what it has done is that it has loaded this entire speech dot txt in one document that is
+
+available over here.
+
+Okay, so this is one very easy way of loading a txt file.
+
+Okay.
+
+Now let's go ahead and do one more thing.
+
+Uh, I will just try to show you with respect to py pdf like how do you read a PDF file.
+
+So reading a PDF file.
+
+Okay so here what I'll be writing I'll again go ahead and write from Langston underscore community dot
+
+document loaders okay.
+
+Again.
+
+And this time I'm going to import py pdf py pdf loader.
+
+So py pdf loader basically loads the PDF, any PDF that you are giving inside this.
+
+So I'll go ahead and initialize py pdf loader.
+
+And here I'm just going to go ahead and write attention dot pdf.
+
+So this is my PDF name that I have and this PDF I have actually taken a research paper uh of transformer
+
+attention is all you need.
+
+I hope you may have heard about it.
+
+And again it was available in arXiv.
+
+Uh, arXiv website.
+
+Okay.
+
+Now here what I'm actually going to do is that I'll go ahead and create a variable called as loader.
+
+And again to get the documents I will just go ahead and write loader dot load.
+
+So once I do that so finally you'll be able to see this will be my docs.
+
+So it will go and read from this particular PDF.
+
+Now it says hey I am getting an error.
+
+He's saying that hey please go ahead and install py pip PDF.
+
+Now let me quickly go to the requirement dot txt again the error that we are seeing.
+
+We really need to fix the error.
+
+So I here I'll go ahead and install this pip pdf.
+
+So quickly.
+
+Let's go ahead and write pip install minus t uh requirement dot txt.
+
+Now the installation will start and here you can see the pip pdf is installed.
+
+So I will close this quickly.
+
+And now let's go ahead and execute it once again.
+
+So now I think it should be loading it.
+
+And here you can see with respect to all the PDF it has been able to read each and everything.
+
+Right.
+
+So here was my first page I guess then this was my second page.
+
+Third page, fourth page.
+
+Like this I'm able to see all these things.
+
+And the return type is basically docs document.
+
+So if I go ahead and see type of docs here, you will be able to see that, hey it is a list.
+
+Uh, list of documents.
+
+So let's say if I go ahead and write type of docs of zero here, you can say that it is a document type,
+
+okay.
+
+And inside the document type you have this attribute called as page content.
+
+And at the end you'll be able to see some kind of metadata okay.
+
+It's a very big PDF.
+
+So let's not not explore that.
+
+So that at the end if you probably scroll till the end okay.
+
+If I just go ahead and scroll it till the end.
+
+Right.
+
+You'll be able to see the metadata source attention dot PDF.
+
+And this is page one.
+
+So every page is basically converted into a document over here okay.
+
+Perfect.
+
+So this is another way of reading a PDF file okay.
+
+So I hope you got an idea with respect to this.
+
+Uh till here.
+
+Let's go ahead and do one more.
+
+Amazing.
+
+Uh, we will just try to use another document loader technique, and this time we are just going to
+
+use something called as web based loader.
+
+So here we are going to discuss about web based loader okay.
+
+Again since we are just discussing how we can load the data set from different different data source.
+
+Okay.
+
+Now I will go ahead and write from long chain underscore community dot document loaders.
+
+And here we are going to import web base loader.
+
+Now web based loader is like let's say that you probably want to give any website okay.
+
+It should be able to read the content from that particular website okay.
+
+That is what we specifically do in this.
+
+So let's take one example and this example URL I will show you by opening the browser itself.
+
+Okay.
+
+So let me quickly show this over here.
+
+So let's say I'll go ahead and copy and paste it.
+
+And let's consider this particular website.
+
+This is a website which is uh, saying that hey LM powered autonomous agent, I have so and so information.
+
+Everything is over here.
+
+Okay.
+
+Now, this is my entire website, and I want to load this entire content.
+
+Okay.
+
+So let me quickly go over here and let's go ahead and initialize this web based loader.
+
+Now inside this web based loader the first parameter is something called as web underscore path.
+
+Okay.
+
+Now inside this we will be giving one path.
+
+Let's say my URL is something like this.
+
+And I'll paste it over here.
+
+Okay so this is my URL okay.
+
+And uh over here you'll be also able to see that when I'm using this particular URL.
+
+Okay.
+
+And let's let's try to execute this directly okay.
+
+Here what I'm doing I'll just give this web path and let me go ahead and create a variable.
+
+So let's see whether it will execute fast or not.
+
+So here it says hey user agent variable not set.
+
+Considering to identify your request okay no worries.
+
+So what I will do over here?
+
+I will go ahead and.
+
+Okay, just a second.
+
+I will just go ahead and put a comma and provide more parameters.
+
+Okay.
+
+Now this time the parameters that I am actually going to provide is with respect to the element.
+
+So let's execute this first of all okay.
+
+So here you can see that I have executed it over here okay.
+
+And the reason why I have given comma because you can put any number of URLs over here since I have
+
+used web paths, if you just use web path you can just give one URL.
+
+Okay.
+
+So here I have just given web paths and I've given this particular URL.
+
+Okay.
+
+Now let's go ahead and take this loader okay loader okay.
+
+And I'll do dot load.
+
+Once I do loader dot load you'll be able to see hey I have actually got the page content of the entire
+
+page right.
+
+So this is my entire page content.
+
+So if I just go ahead and see my browser okay.
+
+So here I've got this entire page content inside this okay.
+
+Along with new line everything as such.
+
+Okay.
+
+And this is so amazing right.
+
+You just by writing this two line you are able to get it.
+
+One important thing that you need to remember is that here you also require beautiful soup.
+
+Okay.
+
+Uh, beautiful soup is one kind of library that you definitely require in whenever you are doing the
+
+scrapping task in any of the project.
+
+Okay.
+
+So, uh, in order to execute or install this, uh, beautiful soup, you can just go ahead and write
+
+this over here.
+
+BS4.
+
+Okay.
+
+And I will just go ahead and press this.
+
+Now let's quickly go ahead and do the requirement dot txt.
+
+My BS4 will basically get installed.
+
+That is nothing but beautifulsoup.
+
+Now what I will do, I will go ahead and uh, close that particular terminal.
+
+Now, what I am actually going to do over here is that let's make this and provide more parameters,
+
+uh, based on our needs.
+
+Okay.
+
+Now, in order to provide more parameters over here, I can play with this web page based on what content
+
+I want.
+
+Right now, everything has been just.
+
+Everything has been extracted like post archive, search tags, everything.
+
+Let's say I will go ahead and inspect this okay.
+
+Now when you go ahead and inspect this, let's say that I want some of the classes.
+
+Let's consider I want a post title because I am interested in this okay I want post content.
+
+Post content basically means I want this entire content from that.
+
+And finally, uh, after this, I also want the post header.
+
+Okay.
+
+So let's say with respect to this three classes, I want the information from this particular page.
+
+Okay.
+
+So how do I give that.
+
+That is what I'm actually going to show you now okay.
+
+Just by using the same functionality.
+
+So here what I'll be doing I'll be using this web path along with the path.
+
+I will give more parameters.
+
+The next parameter that we are going to use is something called as bs underscore kw args.
+
+Okay.
+
+Here I will be giving in the form of dictionary.
+
+The first thing will be that I will try to give the parse underscore only will be nothing, but I'll
+
+just go ahead and import BS four.
+
+Let's go ahead and import BS four okay.
+
+Uh beautiful soup four I will say hey parse only is equal to BS4 dot soup strainer.
+
+Okay.
+
+And just by giving this parameter I will be able to give my class.
+
+So here I will write class underscore equal to.
+
+Let me just go ahead and give which all uh classes I want I want post I want post post dot title okay.
+
+Uh dash title then I also want post dash content and I also want post dash header.
+
+Okay I want this three information.
+
+And based on this particular three information, I need to retrieve the content from this particular
+
+URL.
+
+So I will just go ahead and execute it.
+
+And this will now be my loaded or load.
+
+And here you can see slash slash N has all removed because I just want that relevant text.
+
+And this is how I'm also able to clean some of the information while I am loading all the information
+
+over here.
+
+Right.
+
+And I hope you are able to understand with respect to this particular parameter.
+
+And here you will be seeing that power of beautiful soup is amazing because you are able to retrieve
+
+all the details itself.
+
+Right.
+
+So, uh, this was with respect to web based loader.
+
+Okay.
+
+Now there are also different different data ingestion technique which I will be showing you over here.
+
+Let's go ahead and I'll show you two more important things okay.
+
+One is with respect to the most famous because see, uh, this are safe.
+
+Okay.
+
+Now, our safe is something, uh, you know, if you don't know about our safe, if I go ahead and search,
+
+attention is all you need.
+
+Research paper.
+
+Okay.
+
+The default website that it will go will be in this particular website that is called a R shift.
+
+Right.
+
+And here we can go ahead and see the PDF.
+
+What if I have the entire data source as ourself.
+
+Right.
+
+I will be able to directly communicate with this.
+
+So how do I do that okay.
+
+So first of all what I really need to do is that I will go ahead and install this, that is pip install
+
+ourself.
+
+Okay.
+
+So for that I will go back to my code.
+
+Go ahead and update my requirement dot txt with our chef.
+
+Okay I will go ahead and open my terminal and quickly write pip install minus our requirement dot txt.
+
+Now here you can see quickly it will get installed and my RCF packages also got installed.
+
+Now in order to check it out whether our chef is working fine or not, I will go back to my data ingestion
+
+and this time I'll just go ahead and write arXiv.
+
+Okay.
+
+And let's go ahead and copy this.
+
+Let's say I want to copy this.
+
+First of all I will go ahead and import my library document underscore loaders okay.
+
+And then we will go ahead and load this particular paper.
+
+The paper is nothing but the number is 1605.
+
+And here you will be able to see that I will just go ahead and give this.
+
+So here what I am doing.
+
+I am initializing our shift loader.
+
+The query parameter will be the paper number.
+
+Let's see if I go ahead and search this okay.
+
+If I go ahead and search this over here okay.
+
+And press enter.
+
+So here you can see hey this is the research paper that we are talking about right.
+
+Similarly if you go ahead and see attention is all you need right.
+
+So attention is all you need will also have some kind of numbers.
+
+So if I go ahead and see hey attention is all you need okay.
+
+And here is the number for this right.
+
+Attention is all you need.
+
+What is the number that we saw.
+
+It was nothing but this one right.
+
+So let's go ahead and search this okay.
+
+So here I'm going to just go ahead and copy and paste that particular number over here.
+
+Now I'm saying hey go ahead and take this particular query and load maximum two documents.
+
+And I'm writing dot load.
+
+And here is my length of documents.
+
+So here I'm obviously so I'm getting an error.
+
+Let's see what is the error.
+
+It says hey pi mu PDF package not found.
+
+Please install it with uh this uh by using this command which is called as pip install pi mu pdf.
+
+Right.
+
+So here I will just go ahead and copy this.
+
+I will go ahead and update it over here.
+
+And this is how you basically do it.
+
+You can also do pip install right directly.
+
+I'll quickly go ahead and do this installation.
+
+Now this installation will take place.
+
+And once this installation is taking place we will be able to go ahead and use it.
+
+So I will close this now.
+
+And now again I'll go ahead and execute it.
+
+That's it.
+
+I'm searching for this particular query.
+
+It should be able to give me this particular documents from that entire research paper.
+
+So he provided a proper attribution.
+
+Google hereby grant so and so.
+
+All the information is probably here, right?
+
+The entire research paper is just given in the document.
+
+And this is so amazing.
+
+That is the reason I like long chain because it has almost document loader functionalities.
+
+You want to ask if you want any kind of data source, Excel, CSV, TSV, whatever things you want,
+
+there is a document loader for that.
+
+Okay, now there is also one more.
+
+If you want to go ahead and explore this, there is something called as Wikipedia.
+
+Okay.
+
+You can also go ahead and see Wikipedia okay.
+
+So let me show you over here.
+
+So Wikipedia for Wikipedia you need to go ahead and install Wikipedia over here.
+
+Right.
+
+So I will go ahead and install Wikipedia.
+
+Quickly open this install it.
+
+Right.
+
+So I'm giving you a complete generic way how you can access it along with this.
+
+Right.
+
+So I will copy this quickly okay.
+
+I will close it over here.
+
+So I will go ahead and save Wikipedia Loader.
+
+Then it says, hey, uh, based on any query that you search.
+
+So I will just go ahead and execute instead of writing Hunter x Hunter, I will say, hey, uh, what?
+
+Let's find out some information about generative AI, okay?
+
+And I want this particular dogs.
+
+And let's go ahead and print my docs.
+
+Okay.
+
+And here you have this automatically.
+
+It will be loading two documents.
+
+And here is the entire page content right.
+
+Entire page content.
+
+If I just go ahead and display docs you will also be able to see all this information.
+
+Right.
+
+So everything is over here and I think it should be giving you the page URL.
+
+Also see page URL is also given.
+
+This is the URL that is searched.
+
+And just by using this.
+
+Wow!
+
+I think you should be able to feel very much happy because now any kind of data you'll be able to get
+
+it.
+
+And this is a completely free Wherever there is an API required, you can use the API.
+
+Let's say I want to have a weather data.
+
+So I need an API for this.
+
+You can go to Weather Data Loader and probably create your API.
+
+You can do that right.
+
+So I hope you are able to understand the entire data ingestion technique with the help of document loaders.
+
+I've shown you multiple examples.
+
+Don't forget to check out the documentation again.
+
+I've given the link over here.
+
+Okay, at the end of the day, Lang Chen has actually included a lot of document loaders through which
+
+you can ingest data from different different data sources.
+
+Right.
+
+So go ahead and explore.
+
+Uh, I will see you all in the next video where I will be talking about once we take this entire document,
+
+the next thing is that how we will be able to do the text splitting.
+
+Right?
+
+That is what I'm actually going to discuss about in my next video.
+
+So yes, I will see you in the next video.
+
+Thank you.
+
