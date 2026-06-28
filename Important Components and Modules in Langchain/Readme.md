@@ -1,8 +1,8 @@
-# 🚀 LangChain Learning Repository
+# LangChain Learning Repository
 
 This repository contains my hands-on learning and implementation of the **LangChain Framework** for building **Retrieval-Augmented Generation (RAG)** applications.
 
-## 📚 Topics Covered
+## Topics Covered
 
 - LangChain Ecosystem
 - LangSmith
@@ -24,7 +24,7 @@ This repository contains my hands-on learning and implementation of the **LangCh
 - Semantic Search
 - Retrieval-Augmented Generation (RAG)
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - Python
 - LangChain
