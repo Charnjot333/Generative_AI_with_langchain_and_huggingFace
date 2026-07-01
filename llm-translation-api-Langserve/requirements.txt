@@ -1,0 +1,10 @@
+langchain
+python-dotenv
+langchain-openai
+ipykernel
+beautifulsoup4
+langchain_community
+langchain-classic
+langchain_groq
+langchain_core
+fastapi
