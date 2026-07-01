@@ -1,9 +1,9 @@
 # LangChain Translation API
-<img src="assets/Langserve_1.png" width="700">
+<img src="Assets/Langserve_1.png" width="700">
 
 A simple multilingual translation API built using **LangChain**, **FastAPI**, **LangServe**, and **Groq's Llama 3.3-70B** model.
 
-<img src="assets/Langserve_2.png" width="700">
+<img src="Assets/Langserve_2.png" width="700">
 
 ## What I Learned
 
